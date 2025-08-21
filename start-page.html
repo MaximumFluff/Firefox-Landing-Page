@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Start Page</title>
+    <!-- Colours based off Atom One Dark Theme: https://www.color-hex.com/color-palette/85269 -->
+    <style>
+      :root {
+        --background-colour:  #282c34;
+        --font-colour: #abb2bf;
+      }
+
+      html {
+        background-color: var(--background-colour);
+        color: var(--font-colour);
+      }
+
+      h2 {
+        margin: 0;
+      }
+
+      header {
+        text-align: center;
+      }
+
+      a {
+        text-decoration: none;
+        color: var(--font-colour);
+      }
+
+      body {
+        width: 50%;
+        margin: 0 auto;
+      }
+
+      .groups {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+      }
+
+      .group {
+        display: flex;
+        flex-direction: column;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <h1>Hello, Alex</h1>
+      <p id="time""></p>
+    </header>
+
+    <div class="groups">
+      <div class="group">
+        <h2>News</h2>
+        <a href="https://bbc.co.uk/news" target="_blank">BBC News</a>
+        <a href="https://arstechnica.com/" target="_blank">Ars Technica</a>
+        <a href="https://techdirt.com" target="_blank">Techdirt</a>
+        <a href="https://yle.fi/news" target="_blank">YLE News English</a>
+      </div>
+      <div class="group">
+        <h2>Proton</h2>
+        <a href="https://mail.proton.me" target="_blank">Mail</a>
+        <a href="https://calendar.proton.me" target="_blank">Calendar</a>
+        <a href="https://drive.proton.me" target="_blank">Drive</a>
+        <a href="https://docs.proton.me" target="_blank">Docs</a>
+      </div>
+      <div class="group">
+        <h2>Tailscale Network</h2>
+        <a href="">Jellyfin</a>
+        <a href="">Calibre</a>
+        <a href="">Tandoor</a>
+      </div>
+    </div>
+  </body>
+
+  <script>
+    const time = document.getElementById('time');
+
+    function displayTime() {
+      const dateString = new Date().toLocaleString('fi-Fi', { timeZone: 'Europe/Helsinki' });
+      time.innerHTML = dateString;
+    }
+
+    setInterval(displayTime, 1000);
+  </script>
+
+</html>
