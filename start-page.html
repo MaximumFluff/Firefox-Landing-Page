@@ -4,60 +4,8 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Start Page</title>
-    <!-- Colours based off Atom One Dark Theme: https://www.color-hex.com/color-palette/85269 -->
-    <style>
-      :root {
-        --background-colour: #282c34;
-        --font-colour: #abb2bf;
-        --name-colour: #282c34;
-      }
-
-      html {
-        background-color: var(--background-colour);
-        color: var(--font-colour);
-      }
-
-      h1 {
-        margin-bottom: 0;
-      }
-
-      h2 {
-        margin: 0;
-      }
-
-      header {
-      }
-
-      a {
-        text-decoration: none;
-        color: var(--font-colour);
-      }
-
-      span {
-        color: var(--name-colour);
-      }
-
-      body {
-        width: 50%;
-        margin: 0 auto;
-      }
-
-      .groups {
-        display: flex;
-        flex-direction: row;
-        justify-content: space-between;
-      }
-
-      .group {
-        display: flex;
-        flex-direction: column;
-      }
-
-      #time {
-        margin-top: 0;
-        font-size: 1.5rem;
-      }
-    </style>
+    <link rel="stylesheet" href="style.css" />
+    <script defer src="script.js"></script>
   </head>
   <body>
     <header>
@@ -88,26 +36,10 @@
       </div>
       <div class="group">
         <h2>Tailscale Network</h2>
-        <a href="">Jellyfin</a>
-        <a href="">Calibre</a>
-        <a href="">Tandoor</a>
+        <a href="https://jellyfin.gremlinlabs.org" target="_blank">Jellyfin</a>
+        <a href="https://calibre.gremlinlabs.org" target="_blank">Calibre</a>
+        <a href="https://tandoor.gremlinlabs.org" target="_blank">Tandoor</a>
       </div>
     </div>
   </body>
-
-  <script>
-    const time = document.getElementById("time");
-    const options = {
-      timeZone: "Europe/Helsinki",
-      dateStyle: "full",
-      timeStyle: "medium",
-    };
-
-    function displayTime() {
-      const dateString = new Date().toLocaleString("fi-Fi", options);
-      time.innerHTML = dateString.charAt(0).toUpperCase() + dateString.slice(1);
-    }
-
-    setInterval(displayTime, 1000);
-  </script>
 </html>

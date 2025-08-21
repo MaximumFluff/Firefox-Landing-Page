@@ -1,0 +1,51 @@
+/* Colours based off Atom One Dark Theme: https://www.color-hex.com/color-palette/85269 */
+
+:root {
+	--background-colour: #282c34;
+	--font-colour: #abb2bf;
+	--name-colour: #636d83;
+}
+
+html {
+	background-color: var(--background-colour);
+	color: var(--font-colour);
+	font-family: "Berkeley Mono", sans-serif;
+}
+
+h1 {
+	margin-bottom: 0;
+}
+
+h2 {
+	margin-bottom: 4px;
+}
+
+a {
+	text-decoration: none;
+	color: var(--font-colour);
+}
+
+span {
+	color: var(--name-colour);
+}
+
+body {
+	width: 50%;
+	margin: 0 auto;
+}
+
+.groups {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+}
+
+.group {
+	display: flex;
+	flex-direction: column;
+}
+
+#time {
+	margin-top: 0;
+	font-size: 1.5rem;
+}
