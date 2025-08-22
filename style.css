@@ -30,19 +30,19 @@ span {
 }
 
 body {
-	width: 50%;
+	width: 60%;
 	margin: 0 auto;
 }
 
 .groups {
 	display: flex;
 	flex-direction: row;
-	justify-content: space-between;
 }
 
 .group {
 	display: flex;
 	flex-direction: column;
+	margin-right: 48px;
 }
 
 #time {
