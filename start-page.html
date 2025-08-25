@@ -4,14 +4,80 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Start Page</title>
-    <link rel="stylesheet" href="style.css" />
-    <script defer src="script.js"></script>
   </head>
+  <style>
+    /* Colours based off Atom One Dark Theme: https://www.color-hex.com/color-palette/85269 */
+
+    :root {
+      --background-colour: #282c34;
+      --font-colour: #abb2bf;
+      --name-colour: #636d83;
+    }
+
+    html {
+      background-color: var(--background-colour);
+      color: var(--font-colour);
+      font-family: "Berkeley Mono", sans-serif;
+    }
+
+    h1 {
+      margin-bottom: 0;
+    }
+
+    h2 {
+      margin-bottom: 4px;
+    }
+
+    a {
+      text-decoration: none;
+      color: var(--font-colour);
+    }
+
+    span {
+      color: var(--name-colour);
+    }
+
+    body {
+      width: 60%;
+      margin: 0 auto;
+    }
+
+    .groups {
+      display: flex;
+      flex-direction: row;
+    }
+
+    .group {
+      display: flex;
+      flex-direction: column;
+      margin-right: 48px;
+    }
+
+    #time {
+      margin-top: 0;
+      font-size: 1.5rem;
+    }
+
+    input {
+      background-color: var(--background-colour);
+      border-radius: 12px;
+      border-color: var(--font-colour);
+      border-width: 4px;
+      border-style: solid;
+      color: white;
+      padding: 8px;
+      outline: none;
+    }
+  </style>
   <body>
     <header>
       <h1>Hello, <span>Alex</span></h1>
       <p id="time"></p>
     </header>
+
+    <form action="http://google.com/search" target="_blank">
+      <input name="q" placeholder="Search..." />
+    </form>
 
     <h1>Frequently Visited Links</h1>
     <div class="groups">
@@ -73,5 +139,21 @@
         <a href="https://tandoor.kovacs.digital" target="_blank">Tandoor</a>
       </div>
     </div>
+    <script>
+      const time = document.getElementById("time");
+
+      const options = {
+        timeZone: "Europe/Helsinki",
+        dateStyle: "full",
+        timeStyle: "medium",
+      };
+
+      function displayTime() {
+        const dateString = new Date().toLocaleString("fi-Fi", options);
+        time.innerHTML = `${dateString.charAt(0).toUpperCase()}${dateString.slice(1)}`;
+      }
+
+      setInterval(displayTime, 1000);
+    </script>
   </body>
 </html>
