@@ -45,6 +45,7 @@
     .groups {
       display: flex;
       flex-direction: row;
+      flex-wrap: wrap;
     }
 
     .group {
@@ -62,16 +63,17 @@
       background-color: var(--background-colour);
       border-radius: 12px;
       border-color: var(--font-colour);
-      border-width: 4px;
+      border-width: 2px;
       border-style: solid;
       color: white;
       padding: 8px;
       outline: none;
+      width: 100%;
     }
   </style>
   <body>
     <header>
-      <h1>Hello, <span>Alex</span></h1>
+      <h1>Hei, <span>Alex</span></h1>
       <p id="time"></p>
     </header>
 
@@ -104,6 +106,7 @@
       </div>
       <div class="group">
         <h2>Programming</h2>
+        <a href="https://www.github.com" target="_blank">GitHub</a>
         <a href="https://developer.mozilla.org/en-US/" target="_blank">MDN</a>
         <a href="https://phptherightway.com/" target="_blank"
           >PHP The Right Way</a
@@ -139,7 +142,7 @@
         <a href="https://tandoor.kovacs.digital" target="_blank">Tandoor</a>
       </div>
     </div>
-    <script>
+    <script async>
       const time = document.getElementById("time");
 
       const options = {
